@@ -11,7 +11,7 @@ function App() {
    fetch('https://jaspervdj.be/lorem-markdownum/markdown.txt', {
      method: 'GET'
    })
-   .then(responce => responce.text())
+   .then(response => response.text())
    .then(data => SetText(data))
 
   },[])

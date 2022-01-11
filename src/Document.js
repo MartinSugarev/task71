@@ -6,9 +6,6 @@ export default function Document({title, content}){
     const ref = useRef()
     const [ able, SetAble ] = useState(true)
 
-    useEffect(() => {
-      console.log('Button is enabled')
-    }, [able])
 
     const handleScroll = () => {
        // const el = document.querySelector("p")
@@ -16,8 +13,6 @@ export default function Document({title, content}){
         const b = ref.current.scrollTop
         const c = ref.current.clientHeight
 
-        
- 
         const isAble = scr - c
 
         console.log(b)
@@ -29,10 +24,11 @@ export default function Document({title, content}){
 
     }
     return(
-    <>
-      <h1 className="title">{title}</h1>
+     <div>
+        <h1 className="title">{title}</h1>
       <p onScroll={handleScroll} ref={ref} className="content">{content}</p>
       <button disabled={able} >I Agree</button>
-    </>
+     </div>
+     
     )
 }
